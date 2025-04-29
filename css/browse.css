@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+   
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+  
+  header {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+
+  }
+  header h1 {
+    text-align: left;
+    margin-left: 22px;
+    font-size: 35px;
+  }
+  header h2{
+    text-align: left;
+    margin-left: 1px;
+    font-size: 35px;
+  }
+
+  .search-area input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+  }
+  
+  .create-btn {
+    padding: 10px 20px;
+    background-color: #e67212;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .filters {
+    margin-top: 15px;
+  }
+  
+  .filters select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 30px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+  
+  .card {
+    background: white;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    margin: 10px 0;
+  }
+  
+  .card p {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .join-btn {
+    background-color: #f57c00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .join-btn:hover, .create-btn:hover {
+    background-color: #e65100;
+  }
+  .time-banking {
+    display: flex;
+    align-items: left, bottom;
+    justify-content: left,bottom;
+    margin-top: 156px;
+    gap: 15px;
+  }
+  
+  .time-banking h2 {
+    font-size: 28px;
+    color: #333;
+    padding-top: 15px;
+    
+
+   
+  }
+  .banking-icon {
+    width: 50px;
+    height: 50px;
+
+  }
+  
