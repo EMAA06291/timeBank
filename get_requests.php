@@ -1,15 +1,14 @@
 <?php
-// إعدادات الرؤوس للسماح بالوصول والـ JSON
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-// استدعاء الاتصال بقاعدة البيانات
 require 'db.php';
 
-// ضبط الترميز UTF-8 في الاتصال بقاعدة البيانات (مهم لو عندك بيانات بالعربي)
+
 $conn->set_charset("utf8");
 
-// SQL: جلب كل الطلبات مع بيانات المرسل، المستقبل، والخدمة
+
 $sql = "
     SELECT 
         r.Request_ID,
@@ -32,10 +31,9 @@ $sql = "
     ORDER BY r.Request_ID DESC
 ";
 
-// تنفيذ الاستعلام
+
 $result = $conn->query($sql);
 
-// التحقق من نجاح الاستعلام
 if (!$result) {
     http_response_code(500);
     echo json_encode([
@@ -45,18 +43,17 @@ if (!$result) {
     exit;
 }
 
-// تجميع النتائج
 $data = [];
 while ($row = $result->fetch_assoc()) {
     $data[] = $row;
 }
 
-// إرسال البيانات بصيغة JSON
+
 echo json_encode([
     "success" => true,
     "data" => $data
 ], JSON_UNESCAPED_UNICODE);
 
-// إغلاق الاتصال
+
 $conn->close();
 ?>
