@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$dbname = 'timebank';
+$dbname = 'timebank-db';
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
