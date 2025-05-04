@@ -2,8 +2,10 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+session_start(); 
+
 header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *"); 
 header("Access-Control-Allow-Methods: POST");
 
 require_once 'db.php';
@@ -32,6 +34,8 @@ if (!password_verify($password, $user['password'])) {
     echo json_encode(["success" => false, "message" => "Incorrect password"]);
     exit;
 }
+
+$_SESSION['user_id'] = $user['user_ID'];
 
 echo json_encode(["success" => true, "message" => "Login successful"]);
 
