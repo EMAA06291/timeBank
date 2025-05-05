@@ -1,32 +1,38 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.question-box form');
-    const input = form.querySelector('input');
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault(); // منع التحديث التلقائي للصفحة عند الضغط على زر submit
-
-        const question = input.value.trim();
-        if (question === '') {
-            alert('Please enter a question.');
-            return;
+console.log("js is connected")
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".question-box form").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const questionInput = this.querySelector("input");
+      const question = questionInput.value.trim();
+  
+      if (question === "") {
+        alert("Please enter a question.");
+        return;
+      }
+  
+      const user_ID = 1; 
+  
+      fetch("../php/submit_question_Faq.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `question=${encodeURIComponent(question)}&user_ID=${user_ID}`
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert("Your question has been submitted successfully!");
+          questionInput.value = "";
+        } else {
+          alert("Error: " + data.message);
         }
-
-        // إرسال السؤال باستخدام method POST
-        fetch('http://localhost/timebank/php/submit_question_FAQ.php', {
-            method: 'POST', // تأكد من إرسال الطلب كـ POST
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'question=' + encodeURIComponent(question) // إرسال السؤال في body الطلب
-        })
-        .then(response => response.text())
-        .then(result => {
-            alert(result); // عرض النتيجة اللي بترجع من السيرفر
-            input.value = ''; // مسح الـ input بعد إرسال السؤال
-        })
-        .catch(error => {
-            alert('Error: ' + error.message); // لو حصل خطأ أثناء الطلب
-        });
-    });
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Something went wrong.");
+      });
+    });
 });
 

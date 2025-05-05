@@ -1,37 +1,31 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $question = trim($_POST['question'] ?? '');
+session_start();
+include 'db.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    $question = $_POST['question'];
+    $user_ID = isset($_POST['user_ID']) ? $_POST['user_ID'] : null;
 
     if (!empty($question)) {
-        $host = 'localhost';
-        $user = 'root';
-        $password = '';
-        $dbname = 'faq_system';
+        $stmt = $conn->prepare("INSERT INTO faq (question, user_ID) VALUES (?, ?)");
+        $stmt->bind_param("si", $question, $user_ID);
 
-        $conn = new mysqli($host, $user, $password, $dbname);
-        if ($conn->connect_error) {
-            http_response_code(500);
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $question = $conn->real_escape_string($question);
-        $sql = "INSERT INTO faq (question) VALUES ('$question')";
-
-        if ($conn->query($sql)) {
-            http_response_code(200);
-            echo "Question saved!";
+        if ($stmt->execute()) {
+            echo json_encode([
+                "status" => "success",
+                "message" => "Question submitted successfully"
+            ]);
         } else {
-            http_response_code(500);
-            echo "Database error.";
+            echo json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]);
         }
-
-        $conn->close();
+        
+        $stmt->close();
     } else {
-        http_response_code(400);
-        echo "Empty question.";
-    }
-} else {
-    http_response_code(405);
-    echo "Method Not Allowed";
+        echo json_encode([
+            "status" => "error",
+            "message" => "Question is required"
+        ]);
 }
 ?>
