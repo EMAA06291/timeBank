@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ Page</title>
-  <link rel="stylesheet" href="../css/faq.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ Page</title>
+    <link rel="stylesheet" href="../css/faq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="faq-section">
+        <h1>Frequently Asked Questions (FAQ)</h1>
 
-<div class="container">
-  <div class="faq-section">
-    <h1>Frequently Asked Questions (FAQ)</h1>
+        <div class="faq-item">
+          <div class="faq-question">
+            Who can use the Time Bank platform? <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="answer-fqa ">
+          Anyone who wants to exchange services using time as currency can use
+          the platform. Whether you're a student, a professional, or a retiree,
+          you can offer your skills and request help from others.
+        </div>
 
-    <div class="faq-item">
-      <div class="faq-question">Who can use the Time Bank platform? <i class="fas fa-plus"></i></div>
+        <div class="faq-item">
+          <div class="faq-question">
+            How does the time credit system work? <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="answer-fqa ">
+          For every hour you spend helping someone, you earn one time credit.
+          You can use that credit later to request an hour of service from
+          another member.
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Can I chat with someone before accepting an exchange?
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="answer-fqa ">
+          Yes, users can send messages and chat before confirming an exchange.
+          This helps both parties agree on the service details and schedule.
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Is this only for local exchanges? <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="answer-fqa ">
+          No, the Time Bank supports both local and remote exchanges. If the
+          service can be provided online (like tutoring or design), you can
+          collaborate with people from anywhere.
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h2>Do you have more questions?</h2>
+        <p>
+          Want to know more about our premium service?<br />Meet the right
+          platform to help you realize.
+        </p>
+        <form>
+          <input type="text" placeholder="your question" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-question">How does the time credit system work? <i class="fas fa-plus"></i></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Can I chat with someone before accepting an exchange? <i class="fas fa-plus"></i></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">Is this only for local exchanges? <i class="fas fa-plus"></i></div>
-    </div>
-  </div>
-
-  <div class="question-box">
-    <div class="icon">
-      <i class="fas fa-comments"></i>
-    </div>
-    <h2>Do you have more questions?</h2>
-    <p>Want to know more about our premium service?<br>Meet the right platform to help you realize.</p>
-    <form>
-      <input type="text" placeholder="your question">
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
-
-</body>
+    <script src="../js/faq.js"></script>
+  </body>
 </html>

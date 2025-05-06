@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<body>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #fefcf6;
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #fefcf6;
+    }
+
+    .dashboard-banner {
+      background-color: #f58220;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      width: fit-content;
+      padding: 10px 40px 10px 20px;
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+      margin: 0;
+      width: 350px;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+      color: #f58220;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 40px;
+      margin-top: 20px;
+    }
+
+    .services-box {
+      width: 48%;
+      background-color: #f3dfc3;
+      padding: 20px;
+      border-left: 6px solid #f58220;
+      border-bottom: 6px solid #f58220;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-top: 60px;
+    }
+
+    .services-box h3 {
+      margin-top: 0;
+    }
+
+    .time-box {
+      background-color: #f3dfc3;
+      border: 5px solid #f58220;
+      border-bottom: 5px solid #f58220;
+      border-radius: 6px;
+      text-align: center;
+      padding: 10px;
+      width: 140px;
+      height: 100px;
+      margin-top: 60px;
+      margin-right: 170px;
+    }
+
+    .time-box h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .time-box p {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .icon-box {
+      width: 10px;
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+
+    .stats-section {
+      padding: 20px 40px 40px;
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+
+    .stats-section h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color:  rgb(0, 0, 0);
+      font-weight: bold;
+    }
+
+    .stats-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      flex: 1 1 200px;
+      background-color: #f3dfc3;
+      border-left: 5px solid #f58220;
+      border-bottom: 5px solid #f58220;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .stat-card h4 {
+      margin: 0 0 10px;
+      color:  rgb(0, 0, 0);
+      font-size: 16px;
+    }
+
+    .stat-card p {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+      color: #f58220;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-wrapper">
+    <div class="dashboard-banner">Dashboard</div>
+    <div class="navbar">
+      <div>MyServices</div>
+      <div>ByHours</div>
+      <div>Messages</div>
+      <div>Settings</div>
+      <div>Notifications</div>
+      <div>Requests</div>
+      <div><i class="fa-regular fa-user" style="color: #f0870f;"></i></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="services-box">
+      <h3>Active Services</h3>
+      <ul>
+        <li>Graphic Design</li>
+        <li>Writing Assistance</li>
+      </ul>
+    </div>
+
+    <div class="time-box">
+      <h4>Time Balance</h4>
+      <p>12 hrs</p> 
+      <div class="icon-box"></div>
+      <i class="fa-regular fa-clock fa-2xl" style="color: #f87d2a;"></i>
+    </div>
+  </div>
+
+
+    <div class="stats-section">
+      <h2>Statistics Summary</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h4>Total Requests</h4>
+          <p>24</p>
+        </div>
+        <div class="stat-card">
+          <h4>Completed Hours</h4>
+          <p>102</p>
+        </div>
+        <div class="stat-card">
+          <h4>Avg. Completion Time</h4>
+          <p>3.2 hrs</p>
+        </div>
+        <div class="stat-card">
+          <h4>Active Clients</h4>
+          <p>7</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -15,6 +15,10 @@ body {
   .faq-section {
     width: 55%;
   }
+  .answer-fqa{
+    background-color: #d9fae4;
+    padding: 20px 10px;
+  }
   
   .faq-section h1 {
     color: #f57c00;
@@ -25,7 +29,7 @@ body {
   .faq-item {
     background-color: #f99c68;
     padding: 30px; /* أكبر */
-    margin: 25px 0;
+    margin: 10px 0;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
