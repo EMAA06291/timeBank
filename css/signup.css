@@ -135,3 +135,9 @@ form input {
 .image-signup {
   height: 400px;
 }
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
