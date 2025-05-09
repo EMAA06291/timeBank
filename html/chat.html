@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Note Interface</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script src="../js/bootstrap.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -14,6 +16,92 @@
       margin-left: 125px;
     }
 
+footer {
+  background: #e67212;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-links a {
+  color: #000000;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.ul-nav {
+  list-style: none;
+  color: white;
+  padding: 0;
+}
+.ul-nav li {
+  padding-block: 7px;
+  cursor: pointer;
+}
+
+.rightSide {
+  width: 80%;
+}
+.header-container,
+.hero-text,
+h2,
+.section,
+.text-warning {
+  padding-left: 100px !important;
+}
+.side-nav {
+  overflow: hidden;
+}
+.logo {
+  width: 50px;
+}
+.manue-i {
+  font-size: 30px;
+}
+.side-nav i {
+  cursor: pointer;
+}
+.ul-nav li {
+  position: relative;
+}
+li .focus-border {
+  position: relative;
+}
+
+li .focus-border::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.5s;
+}
+
+li .b-hover {
+  position: relative;
+}
+
+li .b-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.5s;
+}
+
+li .b-hover:focus::after {
+  width: 100%;
+}
+li a,
+.nav-link {
+  padding-bottom: 10px;
+}
     .container {
       display: flex;
       height: 100vh;
@@ -113,6 +201,39 @@
   </style>
 </head>
 <body>
+  <div class="side-nav min-vh-100 d-flex position-fixed z-3 bg-black">
+    <div class="rightSide d-flex flex-column justify-content-between min-vh-100 p-4">
+      <div>
+        <ul class="ul-nav">
+          <li class="pt-4"><a class="nav-link b-hover" href="./home1.html">home</a></li>
+          <li class="pt-4"><a class="nav-link b-hover" href="./myservices.html">my services</a></li>
+          <li><a class="nav-link b-hover" href="./notification.html">notification</a></li>
+          <li><a class="nav-link b-hover" href="./dashboard.html">dashboard</a></li>
+          <li><a class="nav-link b-hover" href="./purshasehours.html">purshace hours</a></li>
+          <li><a class="nav-link b-hover" href="./quicklearning.html">quick learning</a></li>
+          <li><a class="nav-link b-hover" href="./login.html">login</a></li>
+          <li><a class="nav-link b-hover" href="./signup.html">sign up</a></li>
+          <li><a class="nav-link b-hover" href="./browse.html">browse services</a></li>
+          <li><a class="nav-link b-hover" href="./myprofile.html">profile</a></li>
+          <li><a class="nav-link b-hover" href="./contact.html">contact us</a></li>
+        </ul>
+      </div>
+      <div class="social-media text-white">
+        <i class="fa-brands fa-facebook pb-2"></i>
+        <i class="fa-brands fa-twitter pb-2"></i>
+        <i class="fa-solid fa-globe pb-2"></i>
+        <footer class="text-white">Copyright Â© 2019 All Rights Reserved.</footer>
+      </div>
+    </div>
+    <div class="leftSide bg-white p-2 pt-4 text-black d-flex flex-column justify-content-between text-center">
+      <img src="./logo.png" alt="" class="logo" />
+      <i class="fa-solid fa-bars manue-i"></i>
+      <div class="b-icons">
+        <i class="fa-solid fa-globe d-block pb-2"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="sidebar">
       <div class="search-box">
@@ -125,24 +246,24 @@
         <div class="user"><i class="fa fa-user"></i> John Doe</div>
       </div>
     </div>
-
     <div class="main-content">
       <div class="header">
         <i class="fa fa-user-circle profile-icon"></i>
         <h2>Note with Sarah</h2>
       </div>
-
       <div class="note-box">
         <p>📌 Tomorrow’s schedule confirmed at 4 PM.</p>
       </div>
-
       <div class="note-box">
         <p>📝 Remember to prepare the writing materials before the session.</p>
       </div>
       <div class="add-note-section">
         <input type="text" id="noteInput" placeholder="Write a new note...">
         <button onclick="addNote()">Add Note</button>
+      </div>
     </div>
   </div>
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/chat.js"></script>
 </body>
 </html>

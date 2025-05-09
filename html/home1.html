@@ -4,11 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Time Banking</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css
+
+
+
+"
+    />
     <link rel="stylesheet" href="../css/home2.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../js/bootstrap.min.js" />
   </head>
   <body>
+    <div class="side-nav min-vh-100 d-flex position-fixed z-3 bg-black">
+      <div
+        class="rightSide d-flex flex-column justify-content-between min-vh-100 p-4"
+      >
+        <div>
+          <ul class="ul-nav">
+            <li class="pt-4">
+              <a class="nav-link b-hover" href="./myservices.html"
+                >my services</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./chat.html">send notes</a>
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./notification.html"
+                >notification</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./dashboard.html">dashboard</a>
+            </li>
+            <li>
+              <a class="nav-link b-hove" href="./purshasehours.html"
+                >purshace hours</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./Activity.html"
+                >your Requests
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./login.html">login </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./signup.html"
+                >sign up
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="social-media text-white">
+          <i class="fa-brands fa-facebook pb-2"></i>
+          <i class="fa-brands fa-twitter pb-2"></i>
+          <i class="fa-solid fa-globe pb-2"></i>
+          <footer class="text-white">
+            Copyright Â© 2019 All Rights Reserved.
+          </footer>
+        </div>
+      </div>
+      <div
+        class="leftSide bg-white p-2 pt-4 text-black d-flex flex-column justify-content-between text-center"
+      >
+        <img src="./logo.png" alt="" class="logo" />
+
+        <i class="fa-solid fa-bars manue-i"></i>
+        <div class="b-icons">
+          <i class="fa-solid fa-globe d-block pb-2"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
     <header>
       <div class="header-container">
         <div class="logo">
@@ -38,6 +110,7 @@
                 >Browse Services</a
               >
             </li>
+
             <li>
               <a class="nav-link text-dark b-hover" href="./myprofile.html"
                 >profile</a
@@ -141,7 +214,7 @@
     </section>
 
     <section class="testimonials row bg-light" id="sec-5">
-      <h2 class="text-warning ps-5">Testimonials</h2>
+      <h2 class="text-warning">Testimonials</h2>
       <div class="testimonial col-2">
         <img
           class="imagetest"
@@ -187,6 +260,7 @@
       </div>
       <p>&copy; 2025 Time Banking</p>
     </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/home.js"></script>
   </body>
 </html>

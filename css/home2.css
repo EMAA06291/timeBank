@@ -238,6 +238,41 @@ footer {
   margin: 0 10px;
   text-decoration: none;
 }
+.ul-nav {
+  list-style: none;
+  color: white;
+  padding: 0;
+}
+.ul-nav li {
+  padding-block: 7px;
+  cursor: pointer;
+}
+
+.rightSide {
+  width: 80%;
+}
+.header-container,
+.hero-text,
+h2,
+.section,
+.text-warning {
+  padding-left: 100px !important;
+}
+.side-nav {
+  overflow: hidden;
+}
+.logo {
+  width: 50px;
+}
+.manue-i {
+  font-size: 30px;
+}
+.side-nav i {
+  cursor: pointer;
+}
+.ul-nav li {
+  position: relative;
+}
 li .focus-border {
   position: relative;
 }
@@ -253,8 +288,6 @@ li .focus-border::after {
   background-color: black;
   transition: all 0.5s;
 }
-
-
 
 li .b-hover {
   position: relative;
@@ -274,7 +307,9 @@ li .b-hover::after {
 
 li .b-hover:focus::after {
   width: 100%;
-}li a , .nav-link  {
+}
+li a,
+.nav-link {
   padding-bottom: 10px;
 }
 @keyframes imagePop3D {
