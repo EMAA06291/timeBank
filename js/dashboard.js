@@ -1,11 +1,5 @@
 
 closeNav();
-$(document).ready(() => {
-  searchByName("").then(() => {
-    $(".loading-screen").fadeOut(300);
-    $("body").css("overflow", "visible");
-  });
-});
 function openNav() {
   $(".side-nav").animate({ left: 0 }, 500);
 

@@ -77,7 +77,92 @@
       margin-top: 60px;
       margin-right: 170px;
     }
+footer {
+  background: #e67212;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
 
+.footer-links a {
+  color: #000000;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.ul-nav {
+  list-style: none;
+  color: white;
+  padding: 0;
+}
+.ul-nav li {
+  padding-block: 7px;
+  cursor: pointer;
+}
+
+.rightSide {
+  width: 80%;
+}
+.header-container,
+.hero-text,
+h2,
+.section,
+.text-warning {
+  padding-left: 100px !important;
+}
+.side-nav {
+  overflow: hidden;
+}
+.logo {
+  width: 50px;
+}
+.manue-i {
+  font-size: 30px;
+}
+.side-nav i {
+  cursor: pointer;
+}
+.ul-nav li {
+  position: relative;
+}
+li .focus-border {
+  position: relative;
+}
+
+li .focus-border::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.5s;
+}
+
+li .b-hover {
+  position: relative;
+}
+
+li .b-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.5s;
+}
+
+li .b-hover:focus::after {
+  width: 100%;
+}
+li a,
+.nav-link {
+  padding-bottom: 10px;
+}
     .time-box h4 {
       margin: 0;
       font-size: 16px;
@@ -142,20 +227,94 @@
     }
   </style>
 </head>
-<body>
+<body >
+  <div class="side-nav min-vh-100 d-flex position-fixed z-3 bg-black">
+      <div
+        class="rightSide d-flex flex-column justify-content-between min-vh-100 p-4"
+      >
+        <div>
+          <ul class="ul-nav">
+            <li class="pt-4">
+              <a class="nav-link b-hover" href="./home1.html"
+                >home</a
+              >
+            </li>
+            <li class="pt-4">
+              <a class="nav-link b-hover" href="./myservices.html"
+                >my services</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./notification.html"
+                >notification</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./Activity.html">activity</a>
+            </li>
+            <li>
+              <a class="nav-link b-hove" href="./purshasehours.html"
+                >purshace hours</a
+              >
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./chat.html"
+                >send notes
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover" href="./quicklearning.html"
+                >quick learning
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./login.html">login </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./signup.html"
+                >sign up
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./browse.html"
+                >browse services 
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./myprofile.html"
+                >profile
+              </a>
+            </li>
+            <li>
+              <a class="nav-link b-hover top-0" href="./contact.html"
+                >contact us
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  <div class="header-wrapper">
-    <div class="dashboard-banner">Dashboard</div>
-    <div class="navbar">
-      <a class="text-warning fw-bold text-decoration-none" href="./home1.html">home</a>
-      <a class="text-warning fw-bold text-decoration-none" href="./myservices.html">MyServices</a>
-      <a class="text-warning fw-bold text-decoration-none" href="./purshasehours.html">Buy Hours</a>
-      <a class="text-warning fw-bold text-decoration-none" href="./chat.html">Messages</a>
-      <a class="text-warning fw-bold text-decoration-none"  href="./notification.html">Notifications</a> 
-      <a class="text-warning fw-bold text-decoration-none" href="">Requests</a>
-      <div><i class="fa-regular fa-user" style="color: #f0870f;"></i></div>
+        <div class="social-media text-white">
+          <i class="fa-brands fa-facebook pb-2"></i>
+          <i class="fa-brands fa-twitter pb-2"></i>
+          <i class="fa-solid fa-globe pb-2"></i>
+          <footer class="text-white">
+            Copyright Â© 2019 All Rights Reserved.
+          </footer>
+        </div>
+      </div>
+      <div
+        class="leftSide bg-white p-2 pt-4 text-black d-flex flex-column justify-content-between text-center"
+      >
+        <img src="./logo.png" alt="" class="logo" />
+
+        <i class="fa-solid fa-bars manue-i"></i>
+        <div class="b-icons">
+          <i class="fa-solid fa-globe d-block pb-2"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
     </div>
-  </div>
+
 
   <div class="container">
     <div class="services-box">
@@ -170,7 +329,7 @@
       <h4>Time Balance</h4>
       <p>12 hrs</p> 
       <div class="icon-box"></div>
-      <i class="fa-regular fa-clock fa-2xl" style="color: #f87d2a;"></i>
+      <i class="fa-regular fa-clock fa-2xl pt-5" style="color: #f87d2a;"></i>
     </div>
   </div>
 
@@ -196,5 +355,7 @@
         </div>
       </div>
     </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>
