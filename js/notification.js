@@ -1,58 +1,64 @@
-// closeNav();
+console.log(`notification.js is connected`);
 
-// function openNav() {
-//   $(".side-nav").animate({ left: 0 }, 500);
+let user_ID = null;
 
-//   $(".manue-i").addClass("fa-xmark");
-//   $(".manue-i").removeClass("fa-bars");
-//   $(".ul-nav li ").eq(0).animate({ top: 0 }, 500);
-//   $(".ul-nav li ").eq(1).animate({ top: 0 }, 600);
-//   $(".ul-nav li ").eq(2).animate({ top: 0 }, 700);
-//   $(".ul-nav li ").eq(3).animate({ top: 0 }, 800);
-//   $(".ul-nav li ").eq(4).animate({ top: 0 }, 900);
-//   $(".ul-nav li ").eq(5).animate({ top: 0 }, 1000);
-//   $(".ul-nav li ").eq(6).animate({ top: 0 }, 1100);
-//   $(".ul-nav li ").eq(7).animate({ top: 0 }, 1200);
-//   $(".ul-nav li ").eq(8).animate({ top: 0 }, 1300);
-//   $(".ul-nav li ").eq(9).animate({ top: 0 }, 1400);
-//   $(".ul-nav li ").eq(10).animate({ top: 0 }, 1500);
-//   $(".ul-nav li ").eq(11).animate({ top: 0 }, 1600);
-// }
-// function closeNav() {
-//   let navWidth = $(".rightSide").outerWidth();
+document.addEventListener(`DOMContentLoaded`, function () {
+  fetch(`../php/get_session.php`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.logged_in) {
+        user_ID = data.user_id;
+        console.log(`User ID from session: ${user_ID}`);
+        document.getElementById(`user_id`).textContent = user_ID;
 
-//   $(".side-nav").animate({ left: -navWidth }, 500);
-//   $(".manue-i").removeClass("fa-xmark");
-//   $(".manue-i").addClass("fa-bars");
-//   $(".ul-nav li ").animate({ top: 500 }, 500);
-// }
-// $(".manue-i").click(() => {
-//   if ($(".side-nav").css("left") == "0px") {
-//     closeNav();
-//   } else {
-//     openNav();
-//   }
-// });
+        fetchNotifications(user_ID);
+      } else {
+        window.location.href = `login.html`;
+      }
+    })
+    .catch(err => {
+      console.error(`Session check error:`, err);
+    });
+});
 
-const formData = new FormData();
-formData.append("name", name);
-formData.append("email", email);
-formData.append("message", message);
+function fetchNotifications(userId) {
+  fetch(`../get_notifications.php`)
+    .then(res => res.json())
+    .then(data => {
+      if (Array.isArray(data)) {
+        data.forEach(notification => {
+          displayNotification(notification);
+        });
+      } else {
+        console.error(`Error fetching notifications: ${data.message}`);
+      }
+    })
+    .catch(err => {
+      console.error(`Fetch error:`, err);
+    });
+}
 
-fetch("../php/Contact.php", {
-  method: "POST",
-  body: formData,
-})
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.status === "success") {
-      alert("Your message has been sent successfully!");
-      document.getElementById("contactForm").reset();
-    } else {
-      alert("Error: " + data.message);
-    }
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-    alert("There was an error with the request.");
-  });
+function displayNotification(notification) {
+  const container = document.getElementById(`notifications-container`);
+
+  if (!container) {
+    console.error(`Notification container not found.`);
+    return;
+  }
+
+  const notificationDiv = document.createElement(`div`);
+  notificationDiv.className = `notification`;
+
+  notificationDiv.innerHTML = `
+    <div class="icon"><i class="fas fa-bell"></i></div>
+    <div class="text">${notification.Message}</div>
+    <div class="time">${formatDate(notification.Created_at)}</div>
+  `;
+
+  container.appendChild(notificationDiv);
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleString();
+}

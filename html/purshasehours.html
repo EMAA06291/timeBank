@@ -95,7 +95,7 @@
 
   <div class="alert">
 <div class="icon"><i class="fa-solid fa-circle-exclamation fa-lg" style="color: #f0dcb9;"></i></div>
-     <div class="text"> You have no hours remaining</div>
+     <div class="text" id="hoursStatus"> You have no hours remaining</div>
   </div>
 
   <div class="buy-title">Buy Hours</div>
@@ -105,23 +105,23 @@
     <div class="plan">
       <h3>2 hours</h3>
       <p>$5</p>
-      <button>Purchase</button>
+      <button id="purchaseButton">Purchase</button>
     </div>
 
     <div class="plan">
       <h3>5 hours</h3>
       <p>$10</p>
-      <button>Purchase</button>
+      <button id="purchase5Button">Purchase</button>
     </div>
 
     <div class="plan">
       <h3>10 hours</h3>
       <p>$20</p>
-      <button>Purchase</button>
+      <button id="purchase10Button">Purchase</button>
     </div>
   </div>
-
-  <button class="purchase-main">Purchase</button>
-
+<script src="../js/purchased_2_hours.js"></script>
+<script src="../js/purchased_5_hours.js"></script>
+<script src="../js/purchased_10_hours.js"></script>
 </body>
 </html>

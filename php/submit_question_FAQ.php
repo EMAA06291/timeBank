@@ -1,9 +1,22 @@
 <?php
 session_start();
 include 'db.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+
+header("Content-Type: application/json");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $question = $_POST['question'];
-    $user_ID = isset($_POST['user_ID']) ? $_POST['user_ID'] : null;
+
+    // استخدم user_id من السيشن مباشرة بدلًا من POST
+    if (isset($_SESSION['user_id'])) {
+        $user_ID = $_SESSION['user_id'];
+    } else {
+        echo json_encode([
+            "status" => "error",
+            "message" => "User not logged in"
+        ]);
+        exit;
+    }
 
     if (!empty($question)) {
         $stmt = $conn->prepare("INSERT INTO faq (question, user_ID) VALUES (?, ?)");
@@ -20,12 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 "message" => "Database error"
             ]);
         }
-        
         $stmt->close();
     } else {
         echo json_encode([
             "status" => "error",
             "message" => "Question is required"
         ]);
+    }
+} else {
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid request"
+    ]);
 }
 ?>

@@ -6,78 +6,54 @@
     <title>Activity Requests</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css
-
-
-
-"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link rel="stylesheet" href="../css/Activity.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../js/bootstrap.min.js" />
   </head>
   <body>
-    <!-- <div class="side-nav min-vh-100 d-flex position-fixed z-3 bg-black">
+    <div class="side-nav min-vh-100 d-flex position-fixed z-3 bg-black">
       <div
         class="rightSide d-flex flex-column justify-content-between min-vh-100 p-4"
       >
         <div>
           <ul class="ul-nav">
             <li class="pt-4">
-              <a class="nav-link b-hover" href="./home1.html"
-                >home</a
-              >
+              <a class="nav-link b-hover" href="./home1.html">home</a>
             </li>
             <li class="pt-4">
-              <a class="nav-link b-hover" href="./myservices.html"
-                >my services</a
-              >
+              <a class="nav-link b-hover" href="./myservices.html">my services</a>
             </li>
             <li>
-              <a class="nav-link b-hover" href="./notification.html"
-                >notification</a
-              >
+              <a class="nav-link b-hover" href="./notification.html">notification</a>
             </li>
             <li>
               <a class="nav-link b-hover" href="./dashboard.html">dashboard</a>
             </li>
             <li>
-              <a class="nav-link b-hove" href="./purshasehours.html"
-                >purshace hours</a
-              >
+              <a class="nav-link b-hove" href="./purshasehours.html">purchase hours</a>
             </li>
             <li>
-              <a class="nav-link b-hover" href="./chat.html"
-                >send notes
-              </a>
+              <a class="nav-link b-hover" href="./chat.html">send notes</a>
             </li>
             <li>
-              <a class="nav-link b-hover" href="./quicklearning.html"
-                >quick learning
-              </a>
+              <a class="nav-link b-hover" href="./quicklearning.html">quick learning</a>
             </li>
             <li>
-              <a class="nav-link b-hover top-0" href="./login.html">login </a>
+              <a class="nav-link b-hover top-0" href="./login.html">login</a>
             </li>
             <li>
-              <a class="nav-link b-hover top-0" href="./signup.html"
-                >sign up
-              </a>
+              <a class="nav-link b-hover top-0" href="./signup.html">sign up</a>
             </li>
             <li>
-              <a class="nav-link b-hover top-0" href="./browse.html"
-                >browse services 
-              </a>
+              <a class="nav-link b-hover top-0" href="./browse.html">browse services</a>
             </li>
             <li>
-              <a class="nav-link b-hover top-0" href="./myprofile.html"
-                >profile
-              </a>
+              <a class="nav-link b-hover top-0" href="./myprofile.html">profile</a>
             </li>
             <li>
-              <a class="nav-link b-hover top-0" href="./contact.html"
-                >contact us
-              </a>
+              <a class="nav-link b-hover top-0" href="./contact.html">contact us</a>
             </li>
           </ul>
         </div>
@@ -87,82 +63,32 @@
           <i class="fa-brands fa-twitter pb-2"></i>
           <i class="fa-solid fa-globe pb-2"></i>
           <footer class="text-white">
-            Copyright Â© 2019 All Rights Reserved.
+            Copyright © 2019 All Rights Reserved.
           </footer>
         </div>
       </div>
       <div
         class="leftSide bg-white p-2 pt-4 text-black d-flex flex-column justify-content-between text-center"
       >
-        <img src="./logo.png" alt="" class="logo" />
-
         <i class="fa-solid fa-bars manue-i"></i>
         <div class="b-icons">
           <i class="fa-solid fa-globe d-block pb-2"></i>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="tabs">
-      <button class="tab active ">Activity only</button>
+      <button class="tab active">Activity only</button>
       <button class="tab">All requests</button>
     </div>
 
     <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <h2>Learn programming basics</h2>
-          <span class="status pending">Pending</span>
-        </div>
-        <p>Provider: Youssef Ibrahim</p>
-        <p>Date Requested: April 20, 2025</p>
-        <div class="actions">
-          <button>Cancel Request</button>
-          <button>Message</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <h2>Public Speaking Coaching</h2>
-          <span class="status rejected">Rejected</span>
-        </div>
-        <p>Provider: Mohamed Saeed</p>
-        <p>Date Requested: April 15, 2025</p>
-        <div class="actions">
-          <button>Request Again</button>
-          <button>Message</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <h2>Career Mentorship Session</h2>
-          <span class="status accepted">Accepted</span>
-        </div>
-        <p>Provider: Fatima Nasser</p>
-        <p>Date Requested: April 19, 2025</p>
-        <div class="actions">
-          <button>View Details</button>
-          <button>Message</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <h2>Learn programming basics</h2>
-          <span class="status under-review">Under Review</span>
-        </div>
-        <p>Provider: Amina Khalid</p>
-        <p>Date Requested: April 22, 2025</p>
-        <div class="actions">
-          <button>Cancel Request</button>
-          <button>Message</button>
-        </div>
+      <div id="requests-container">
+        <!-- The dynamically generated request cards will go here -->
       </div>
     </div>
+    
     <script src="../js/jquery-3.7.1.min.js"></script>
-
     <script src="../js/activity.js"></script>
-  </body>
+  </body>
 </html>

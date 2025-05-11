@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(data => {
         if (data.success) {
           alert(data.message);
-          window.location.href = "dashboard.html";
+          window.location.href = "home1.html";
         } else {
           alert(data.message);
         }

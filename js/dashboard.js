@@ -1,35 +1,62 @@
+document.addEventListener("DOMContentLoaded", function () {
+    fetch(`../php/get_session.php`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.logged_in) {
+                const userId = data.user_id;
 
-// closeNav();
-// function openNav() {
-//   $(".side-nav").animate({ left: 0 }, 500);
+                fetch(`http://localhost/timeBank/dashboard.php?user_id=${userId}`, {
+                    method: 'GET'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById("active-services").textContent = data.data.active_services;
+                            document.getElementById("time-balance").textContent = data.data.time_balance;
+                            document.getElementById("ongoing-requests").textContent = data.data.ongoing_requests;
+                            document.getElementById("completed-requests").textContent = data.data.completed_requests;
+                        } else {
+                            console.error('Error:', data.message);
+                            alert('Error fetching dashboard data');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching dashboard data:', error);
+                        alert('Error fetching dashboard data');
+                    });
+            } else {
+                console.log("User not logged in");
+                window.location.href = "login.html";
+            }
+        })
+        .catch(err => {
+            console.error("Session check error:", err);
+        });
+});
 
-//   $(".manue-i").addClass("fa-xmark");
-//   $(".manue-i").removeClass("fa-bars");
-//   $(".ul-nav li ").eq(0).animate({ top: 0 }, 500);
-//   $(".ul-nav li ").eq(1).animate({ top: 0 }, 600);
-//   $(".ul-nav li ").eq(2).animate({ top: 0 }, 700);
-//   $(".ul-nav li ").eq(3).animate({ top: 0 }, 800);
-//   $(".ul-nav li ").eq(4).animate({ top: 0 }, 900);
-//   $(".ul-nav li ").eq(5).animate({ top: 0 }, 1000);
-//   $(".ul-nav li ").eq(6).animate({ top: 0 }, 1100);
-//   $(".ul-nav li ").eq(7).animate({ top: 0 }, 1200);
-//   $(".ul-nav li ").eq(8).animate({ top: 0 }, 1300);
-//   $(".ul-nav li ").eq(9).animate({ top: 0 }, 1400);
-//   $(".ul-nav li ").eq(10).animate({ top: 0 }, 1500);
-//   $(".ul-nav li ").eq(11).animate({ top: 0 }, 1600);
-// }
-// function closeNav() {
-//   let navWidth = $(".rightSide").outerWidth();
+// Side Navigation Toggle
 
-//   $(".side-nav").animate({ left: -navWidth }, 500);
-//   $(".manue-i").removeClass("fa-xmark");
-//   $(".manue-i").addClass("fa-bars");
-//   $(".ul-nav li ").animate({ top: 500 }, 500);
-// }
-// $(".manue-i").click(() => {
-//   if ($(".side-nav").css("left") == "0px") {
-//     closeNav();
-//   } else {
-//     openNav();
-//   }
-// });
+function closeNav() {
+    let navWidth = $(".rightSide").outerWidth();
+
+    $(".side-nav").animate({ left: -navWidth }, 500);
+    $(".manue-i").removeClass("fa-xmark").addClass("fa-bars");
+    $(".ul-nav li").animate({ top: 500 }, 500);
+}
+
+function openNav() {
+    $(".side-nav").animate({ left: 0 }, 500);
+    $(".manue-i").removeClass("fa-bars").addClass("fa-xmark");
+
+    $(".ul-nav li").each(function (index) {
+        $(this).animate({ top: 0 }, 500 + index * 100);
+    });
+}
+
+$(".manue-i").click(() => {
+    if ($(".side-nav").css("left") == "0px") {
+        closeNav();
+    } else {
+        openNav();
+    }
+});
